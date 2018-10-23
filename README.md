@@ -9,3 +9,5 @@ This YAML file contains:
 ** Basically, we could create a multi host cluster, but we'll have to bound pods to be scheduled on the specific host (to find the host filesystem) - this was not tested by me. (it's all about nodeAffinity)
 * StatefulSet that besides mapping the config directory, it maps the data folder of the rabbit MQ to our volume.
 * RABBITMQ_NODENAME is set to the fully qualified cluster dns name (that the headless service provides)
+
+Base YAML was taken from https://github.com/rabbitmq/rabbitmq-peer-discovery-k8s/blob/master/examples/k8s_statefulsets/rabbitmq_statefulsets.yaml and was expanded to host names + the persistent local storage
