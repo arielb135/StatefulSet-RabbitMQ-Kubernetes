@@ -1,5 +1,5 @@
 # StatefulSet-RabbitMQ-Kubernetes
-2 replicas RabbitMQ runs on host with local mount, with stable DNS names using peer discovery plugin
+2 replicas RabbitMQ runs on host with local mount (for each replica), with stable DNS names using peer discovery plugin - survives pods restarts (+ the data survives)
 
 This YAML file contains:
 * NodePort service to expose the amqp protocol + management protocol
@@ -11,3 +11,6 @@ This YAML file contains:
 * RABBITMQ_NODENAME is set to the fully qualified cluster dns name (that the headless service provides)
 
 Base YAML was taken from https://github.com/rabbitmq/rabbitmq-peer-discovery-k8s/blob/master/examples/k8s_statefulsets/rabbitmq_statefulsets.yaml and was expanded to host names + the persistent local storage
+
+*Note - it's advised to use a better solution for storage for bare-metal k8s, for example either NFS share, https://ceph.com/, https://docs.gluster.org/en/latest/
+
