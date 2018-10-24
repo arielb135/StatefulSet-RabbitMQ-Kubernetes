@@ -1,5 +1,5 @@
 # StatefulSet-RabbitMQ-Kubernetes
-2 replicas RabbitMQ runs on host with local mount (for each replica), with stable DNS names using peer discovery plugin - survives pods restarts (+ the data survives)
+Implementation of 2 replicas of RabbitMQ that are running on a host with local mount (for each replica), with stable DNS names using peer discovery plugin - survives pods restarts (+ the data survives)
 
 This YAML file contains:
 * NodePort service to expose the amqp protocol + management protocol
